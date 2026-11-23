@@ -1,0 +1,14 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "Трекер задач з Kanban-дошкою",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node seed.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
