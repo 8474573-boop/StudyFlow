@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Task Tracker</h1>
+    <div id="stats"></div>
+  </header>
+
+  <form id="new-task">
+    <input name="title" placeholder="Нова задача..." required maxlength="200">
+    <select name="priority">
+      <option value="low">Низький</option>
+      <option value="med" selected>Середній</option>
+      <option value="high">Високий</option>
+    </select>
+    <input name="deadline" type="date">
+    <input name="tags" placeholder="теги через кому">
+    <button>Додати</button>
+  </form>
+
+  <div id="filters">
+    <input id="q" placeholder="Пошук...">
+    <input id="tag" placeholder="Тег">
+    <label><input type="checkbox" id="overdue"> Лише прострочені</label>
+    <a href="/api/export.csv">Експорт CSV</a>
+  </div>
+
+  <main id="board">
+    <section class="col" data-status="todo"><h2>To Do</h2><div class="list"></div></section>
+    <section class="col" data-status="in_progress"><h2>In Progress</h2><div class="list"></div></section>
+    <section class="col" data-status="done"><h2>Done</h2><div class="list"></div></section>
+  </main>
+
+  <p class="hint">Перетягуйте картки між колонками. Подвійний клік по назві — редагувати. Клік по тегу — фільтр.</p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
